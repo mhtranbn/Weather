@@ -7,14 +7,20 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		310C7DA71C6B7C1C00952DC5 /* Weather.swift in Sources */ = {isa = PBXBuildFile; fileRef = 310C7DA61C6B7C1C00952DC5 /* Weather.swift */; };
 		312FC6931C6B73DD006D5573 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 312FC6921C6B73DD006D5573 /* AppDelegate.swift */; };
 		312FC6951C6B73DD006D5573 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 312FC6941C6B73DD006D5573 /* ViewController.swift */; };
 		312FC6981C6B73DD006D5573 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 312FC6961C6B73DD006D5573 /* Main.storyboard */; };
 		312FC69A1C6B73DD006D5573 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 312FC6991C6B73DD006D5573 /* Assets.xcassets */; };
 		312FC69D1C6B73DD006D5573 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 312FC69B1C6B73DD006D5573 /* LaunchScreen.storyboard */; };
+		312FC6A51C6B7555006D5573 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 312FC6A41C6B7555006D5573 /* Constants.swift */; };
+		CA01D2EEBC2B1AC5687B8841 /* Pods_Niet_Weer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CDC6CCFDB2D71BD3924F8115 /* Pods_Niet_Weer.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		310C7DA61C6B7C1C00952DC5 /* Weather.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Weather.swift; sourceTree = "<group>"; };
+		310C7DA81C6BC8B600952DC5 /* nl */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = nl; path = nl.lproj/Main.strings; sourceTree = "<group>"; };
+		310C7DA91C6BC8B600952DC5 /* nl */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = nl; path = nl.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
 		312FC68F1C6B73DD006D5573 /* Niet-Weer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Niet-Weer.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		312FC6921C6B73DD006D5573 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		312FC6941C6B73DD006D5573 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -22,6 +28,10 @@
 		312FC6991C6B73DD006D5573 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		312FC69C1C6B73DD006D5573 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		312FC69E1C6B73DD006D5573 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		312FC6A41C6B7555006D5573 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		6539863C1430B19CD23423E9 /* Pods-Niet-Weer.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Niet-Weer.release.xcconfig"; path = "Pods/Target Support Files/Pods-Niet-Weer/Pods-Niet-Weer.release.xcconfig"; sourceTree = "<group>"; };
+		CDC6CCFDB2D71BD3924F8115 /* Pods_Niet_Weer.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Niet_Weer.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		F915F54F1EBEB78614552C55 /* Pods-Niet-Weer.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Niet-Weer.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Niet-Weer/Pods-Niet-Weer.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -29,17 +39,28 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CA01D2EEBC2B1AC5687B8841 /* Pods_Niet_Weer.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		10EDFD725C386449332360F6 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				CDC6CCFDB2D71BD3924F8115 /* Pods_Niet_Weer.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		312FC6861C6B73DD006D5573 = {
 			isa = PBXGroup;
 			children = (
 				312FC6911C6B73DD006D5573 /* Niet-Weer */,
 				312FC6901C6B73DD006D5573 /* Products */,
+				E5EE55A8459396BE6A9BC48C /* Pods */,
+				10EDFD725C386449332360F6 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -57,11 +78,22 @@
 				312FC6921C6B73DD006D5573 /* AppDelegate.swift */,
 				312FC6941C6B73DD006D5573 /* ViewController.swift */,
 				312FC6961C6B73DD006D5573 /* Main.storyboard */,
+				312FC6A41C6B7555006D5573 /* Constants.swift */,
+				310C7DA61C6B7C1C00952DC5 /* Weather.swift */,
 				312FC6991C6B73DD006D5573 /* Assets.xcassets */,
 				312FC69B1C6B73DD006D5573 /* LaunchScreen.storyboard */,
 				312FC69E1C6B73DD006D5573 /* Info.plist */,
 			);
 			path = "Niet-Weer";
+			sourceTree = "<group>";
+		};
+		E5EE55A8459396BE6A9BC48C /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				F915F54F1EBEB78614552C55 /* Pods-Niet-Weer.debug.xcconfig */,
+				6539863C1430B19CD23423E9 /* Pods-Niet-Weer.release.xcconfig */,
+			);
+			name = Pods;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -71,9 +103,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 312FC6A11C6B73DD006D5573 /* Build configuration list for PBXNativeTarget "Niet-Weer" */;
 			buildPhases = (
+				5F57929965CA1A13E96BC275 /* Check Pods Manifest.lock */,
 				312FC68B1C6B73DD006D5573 /* Sources */,
 				312FC68C1C6B73DD006D5573 /* Frameworks */,
 				312FC68D1C6B73DD006D5573 /* Resources */,
+				94483D0E62DAC0E1AFB18780 /* Embed Pods Frameworks */,
+				C7B7E8FBC80A48B78947FE54 /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -130,13 +165,63 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		5F57929965CA1A13E96BC275 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		94483D0E62DAC0E1AFB18780 /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Niet-Weer/Pods-Niet-Weer-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C7B7E8FBC80A48B78947FE54 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Niet-Weer/Pods-Niet-Weer-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		312FC68B1C6B73DD006D5573 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				310C7DA71C6B7C1C00952DC5 /* Weather.swift in Sources */,
 				312FC6951C6B73DD006D5573 /* ViewController.swift in Sources */,
 				312FC6931C6B73DD006D5573 /* AppDelegate.swift in Sources */,
+				312FC6A51C6B7555006D5573 /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -147,6 +232,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				312FC6971C6B73DD006D5573 /* Base */,
+				310C7DA81C6BC8B600952DC5 /* nl */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
@@ -155,6 +241,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				312FC69C1C6B73DD006D5573 /* Base */,
+				310C7DA91C6BC8B600952DC5 /* nl */,
 			);
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
@@ -247,6 +334,7 @@
 		};
 		312FC6A21C6B73DD006D5573 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = F915F54F1EBEB78614552C55 /* Pods-Niet-Weer.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = "Niet-Weer/Info.plist";
@@ -258,6 +346,7 @@
 		};
 		312FC6A31C6B73DD006D5573 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6539863C1430B19CD23423E9 /* Pods-Niet-Weer.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = "Niet-Weer/Info.plist";
@@ -286,6 +375,7 @@
 				312FC6A31C6B73DD006D5573 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
