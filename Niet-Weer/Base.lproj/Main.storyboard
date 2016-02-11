@@ -348,18 +348,18 @@
                     <connections>
                         <outlet property="dateLbl" destination="xPo-3O-Ict" id="ceY-44-SX5"/>
                         <outlet property="dayLbl" destination="5cc-nL-NSV" id="Jka-ea-KBu"/>
-                        <outlet property="futureWeatherDay0Lbl" destination="8Qd-Fr-Ti5" id="bAX-HW-fDK"/>
-                        <outlet property="futureWeatherDay1Lbl" destination="J7x-rd-DnQ" id="8MA-Fq-Yjs"/>
-                        <outlet property="futureWeatherDay2Lbl" destination="zUJ-6V-IcY" id="qaN-Ny-7mQ"/>
-                        <outlet property="futureWeatherDay3Lbl" destination="S7N-wA-yhZ" id="aTy-pi-oXL"/>
-                        <outlet property="futureWeatherDay4Lbl" destination="438-rG-87x" id="847-rP-XNb"/>
-                        <outlet property="futureWeatherDay5Lbl" destination="73V-hi-3sK" id="ufk-zH-G3Y"/>
-                        <outlet property="futureWeatherTime0Lbl" destination="rk8-Zs-RN8" id="MvE-hj-vv5"/>
-                        <outlet property="futureWeatherTime1Lbl" destination="kaw-hs-QMp" id="H9g-mD-wbO"/>
-                        <outlet property="futureWeatherTime2Lbl" destination="r2Z-ei-ZU0" id="0in-s7-vIE"/>
-                        <outlet property="futureWeatherTime3Lbl" destination="Wfl-TR-hJB" id="IFW-x5-Gsd"/>
-                        <outlet property="futureWeatherTime4Lbl" destination="7lU-0t-hFM" id="idV-x0-SAY"/>
-                        <outlet property="futureWeatherTime5Lbl" destination="S5S-Q3-JqM" id="oAX-Cx-EHW"/>
+                        <outlet property="futureWeatherDay0Lbl" destination="8Qd-Fr-Ti5" id="QXN-49-0cv"/>
+                        <outlet property="futureWeatherDay1Lbl" destination="J7x-rd-DnQ" id="3QO-pP-fcd"/>
+                        <outlet property="futureWeatherDay2Lbl" destination="zUJ-6V-IcY" id="WBw-nh-3We"/>
+                        <outlet property="futureWeatherDay3Lbl" destination="S7N-wA-yhZ" id="85m-ea-lhu"/>
+                        <outlet property="futureWeatherDay4Lbl" destination="438-rG-87x" id="PSK-uL-TlU"/>
+                        <outlet property="futureWeatherDay5Lbl" destination="73V-hi-3sK" id="tRu-qh-vmu"/>
+                        <outlet property="futureWeatherTime0Lbl" destination="rk8-Zs-RN8" id="MtW-g2-NqM"/>
+                        <outlet property="futureWeatherTime1Lbl" destination="kaw-hs-QMp" id="YYc-ul-UeG"/>
+                        <outlet property="futureWeatherTime2Lbl" destination="r2Z-ei-ZU0" id="vCh-5b-sg6"/>
+                        <outlet property="futureWeatherTime3Lbl" destination="Wfl-TR-hJB" id="U92-DU-zbA"/>
+                        <outlet property="futureWeatherTime4Lbl" destination="7lU-0t-hFM" id="7Sg-gT-x5m"/>
+                        <outlet property="futureWeatherTime5Lbl" destination="S5S-Q3-JqM" id="8OV-LD-EJZ"/>
                         <outlet property="humLbl" destination="Gzx-ct-B5h" id="YrW-Tx-KRD"/>
                         <outlet property="locationLbl" destination="uzw-Bn-IlN" id="hvY-zb-Wus"/>
                         <outlet property="maxTempLbl" destination="eYp-0c-eHZ" id="jTp-Ac-PKi"/>

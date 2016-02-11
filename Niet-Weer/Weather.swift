@@ -115,10 +115,10 @@ class Weather {
     
     
     
+    
     func weatherDetails(completed: DownloadComplete) {
         
         let currentWeatherUrl = NSURL(string: self._currentWeatherUrl)!
-        let futureWeatherUrl = NSURL(string: self._futureWeatherUrl)!
         
         // Current Weather
         Alamofire.request(.GET, currentWeatherUrl).responseJSON { response in
@@ -159,8 +159,11 @@ class Weather {
                         self._hum = String(format: "%.0f", hum)
                     }
                 }
+                completed()
             }
         }
+        
+        let futureWeatherUrl = NSURL(string: self._futureWeatherUrl)!
         
         // Future Weather
         Alamofire.request(.GET, futureWeatherUrl).responseJSON { response in
@@ -171,24 +174,22 @@ class Weather {
                 if let list = dict["list"] as? [Dictionary<String, AnyObject>] {
                     
                     for var i = 0; i < list[0].count; i++ {
-                        if let day = list[i]["dt"] as? Double {
-                            let date = NSDate(timeIntervalSince1970: day)
+                        if let timePassed = list[i]["dt"] as? Double {
+                            let date = NSDate (timeIntervalSince1970: timePassed)
                             let timeFormatter = NSDateFormatter()
                             let dayFormatter = NSDateFormatter()
-                            let dateFormatter = NSDateFormatter()
                             timeFormatter.dateFormat = "h:mm"
                             dayFormatter.dateFormat = "EEEE"
-                            dateFormatter.dateStyle = NSDateFormatterStyle.LongStyle
                             self._futureWeatherArr["time\(i)"] = timeFormatter.stringFromDate(date)
                             self._futureWeatherArr["day\(i)"] = dayFormatter.stringFromDate(date)
-                            self._futureWeatherArr["date\(i)"] = dateFormatter.stringFromDate(date)
                         }
                     }
                 }
+                completed()
             }
-            completed()
         }
     }
+    
 }
 
 

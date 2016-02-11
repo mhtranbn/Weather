@@ -50,8 +50,6 @@ class ViewController: UIViewController {
         }
     }
     
-    
-    
     func updateCurrentWeather() {
         locationLbl.text = weather.location
         tempLbl.text = "\(weather.temp)\u{B0}"
@@ -60,25 +58,15 @@ class ViewController: UIViewController {
         dayLbl.text = weather.day
         dateLbl.text = weather.date
         humLbl.text = "\(weather.hum)\u{25}"
-}
+    }
     
     func updateFutureWeather() {
         print(weather.futureWeatherArr)
-        
-//        futureWeatherDay0Lbl.text = weather.futureWeatherArr["day0"]
-//        futureWeatherDay1Lbl.text = weather.futureWeatherArr["day1"]
-//        futureWeatherDay2Lbl.text = weather.futureWeatherArr["day2"]
-//        futureWeatherDay3Lbl.text = weather.futureWeatherArr["day3"]
-//        futureWeatherDay4Lbl.text = weather.futureWeatherArr["day4"]
-//        futureWeatherDay5Lbl.text = weather.futureWeatherArr["day5"]
-//        
-//        futureWeatherTime0Lbl.text = weather.futureWeatherArr["time0"]
-//        futureWeatherTime1Lbl.text = weather.futureWeatherArr["time1"]
-//        futureWeatherTime2Lbl.text = weather.futureWeatherArr["time2"]
-//        futureWeatherTime3Lbl.text = weather.futureWeatherArr["time3"]
-//        futureWeatherTime4Lbl.text = weather.futureWeatherArr["time4"]
-//        futureWeatherTime5Lbl.text = weather.futureWeatherArr["time5"]
-//        
+        if weather.futureWeatherArr != ["": ""] {
+            futureWeatherTime0Lbl.text = weather.futureWeatherArr["time0"]
+            futureWeatherTime1Lbl.text = weather.futureWeatherArr["time1"]
+            futureWeatherTime2Lbl.text = weather.futureWeatherArr["time2"]
+        }
     }
 
     override func didReceiveMemoryWarning() {
