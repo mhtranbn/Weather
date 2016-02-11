@@ -22,6 +22,10 @@ class Weather {
     private var _minTemp: String!
     private var _maxTemp: String!
     private var _hum: String!
+    private var _pres: String!
+    private var _cloud: String!
+    private var _windSpd: String!
+    private var _windDir: String!
     private var _futureWeatherArr: [String:String]!
     
     var location: String {
@@ -96,7 +100,43 @@ class Weather {
         }
     }
     
-    var futureWeatherArr: [String:String] {
+    var pres: String {
+        get {
+            if _pres == nil {
+                _pres = ""
+            }
+            return _pres
+        }
+    }
+    
+    var cloud: String {
+        get {
+            if _cloud == nil {
+                _cloud = ""
+            }
+            return _cloud
+        }
+    }
+    
+    var windSpd: String {
+        get {
+            if _windSpd == nil {
+                _windSpd = ""
+            }
+            return _windSpd
+        }
+    }
+    
+    var windDir: String {
+        get {
+            if _windDir == nil {
+                _windDir = ""
+            }
+            return _windDir
+        }
+    }
+    
+    var futureWeatherArr: [String: String] {
         get {
             if _futureWeatherArr == nil {
                 _futureWeatherArr = ["":""]
@@ -119,25 +159,42 @@ class Weather {
     func weatherDetails(completed: DownloadComplete) {
         
         let currentWeatherUrl = NSURL(string: self._currentWeatherUrl)!
+        let futureWeatherUrl = NSURL(string: self._futureWeatherUrl)!
         
-        // Current Weather
-        Alamofire.request(.GET, currentWeatherUrl).responseJSON { response in
-            let result = response.result
+        Alamofire.request(.GET, currentWeatherUrl).responseJSON { secondResponse in
+            Alamofire.request(.GET, futureWeatherUrl).responseJSON { firstResponse in
+                let firstResult = firstResponse.result
+                
+                if let dict = firstResult.value as? Dictionary<String, AnyObject> {
+                    if let list = dict["list"] as? [Dictionary<String, AnyObject>] {
+                        for var i = 0; i < list[0].count; i++ {
+                            if let timePassed = list[i]["dt"] as? Double {
+                                let date = NSDate(timeIntervalSince1970: timePassed)
+                                let timeFormatter = NSDateFormatter()
+                                timeFormatter.dateFormat = "h:mm"
+                                self._futureWeatherArr["time\(i)"] = timeFormatter.stringFromDate(date)
+                            }
+                        }
+                    }
+                }
+                completed()
+            }
             
-            if let dict = result.value as? Dictionary<String, AnyObject> {
+            
+            let secondResult = secondResponse.result
+            
+            if let dict = secondResult.value as? Dictionary<String, AnyObject> {
                 if let location = dict["name"] as? String {
                     self._location = location
                 }
                 
-                if let day = dict["dt"] as? Double {
-                    let date = NSDate(timeIntervalSince1970: day)
-                    let timeFormatter = NSDateFormatter()
+                if let timePassed = dict["dt"] as? Double {
+                    let date = NSDate(timeIntervalSince1970: timePassed)
+                    
                     let dayFormatter = NSDateFormatter()
                     let dateFormatter = NSDateFormatter()
-                    timeFormatter.dateFormat = "h:mm a"
                     dayFormatter.dateFormat = "EEEE"
                     dateFormatter.dateStyle = NSDateFormatterStyle.LongStyle
-                    self._time = timeFormatter.stringFromDate(date)
                     self._day = dayFormatter.stringFromDate(date)
                     self._date = dateFormatter.stringFromDate(date)
                 }
@@ -158,38 +215,31 @@ class Weather {
                     if let hum = main["humidity"] {
                         self._hum = String(format: "%.0f", hum)
                     }
-                }
-                completed()
-            }
-        }
-        
-        let futureWeatherUrl = NSURL(string: self._futureWeatherUrl)!
-        
-        // Future Weather
-        Alamofire.request(.GET, futureWeatherUrl).responseJSON { response in
-            let result = response.result
-            
-            if let dict = result.value as? Dictionary<String, AnyObject> {
-                
-                if let list = dict["list"] as? [Dictionary<String, AnyObject>] {
                     
-                    for var i = 0; i < list[0].count; i++ {
-                        if let timePassed = list[i]["dt"] as? Double {
-                            let date = NSDate (timeIntervalSince1970: timePassed)
-                            let timeFormatter = NSDateFormatter()
-                            let dayFormatter = NSDateFormatter()
-                            timeFormatter.dateFormat = "h:mm"
-                            dayFormatter.dateFormat = "EEEE"
-                            self._futureWeatherArr["time\(i)"] = timeFormatter.stringFromDate(date)
-                            self._futureWeatherArr["day\(i)"] = dayFormatter.stringFromDate(date)
-                        }
+                    if let pres = main["pressure"] {
+                        self._pres = String(format: "%.0f", pres)
                     }
                 }
-                completed()
+                
+                if let clouds = dict["clouds"] as? Dictionary<String, Double> {
+                    if let cloud = clouds["all"] {
+                        self._cloud = String(format: "%.0f", cloud)
+                    }
+                }
+                
+                if let wind = dict["wind"] as? Dictionary<String, Double> {
+                    if let windSpd = wind["speed"] {
+                        self._windSpd = String(format: "%.0f", windSpd)
+                    }
+                    
+                    if let windDir = wind["deg"] {
+                        self._windDir = String(format: "%.0f", windDir)
+                    }
+                }
             }
+//            completed()
         }
     }
-    
 }
 
 
